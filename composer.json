@@ -1,0 +1,51 @@
+{
+    "name": "lehagere/error-log-notification",
+    "description": "A time bound error notification for Laravel.",
+    "keywords": [
+        "lehagere",
+        "error-log-notification"
+    ],
+    "homepage": "https://github.com/lehagere/error-log-notification",
+    "license": "MIT",
+    "type": "library",
+    "authors": [{
+        "name": "Yonatan",
+        "email": "yonihahasis@gmail.com",
+        "role": "Developer"
+    }],
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lehagere\\ErrorLogNotification\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lehagere\\ErrorLogNotification\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lehagere\\ErrorLogNotification\\ErrorLogNotificationServiceProvider"
+            ],
+            "aliases": {
+                "ErrorLogNotification": "Lehagere\\ErrorLogNotification\\ErrorLogNotificationFacade"
+            }
+        }
+    }
+}
